@@ -6,9 +6,14 @@ import {
   TextInput,
   TouchableOpacity
 } from "react-native";
+import { Participant } from "../../components/Participant";
 import { styles } from "./styles";
 
 export default function Home() {
+  function handleDelete() {
+    console.log("removing");
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.eventName}>Nome do evento</Text>
@@ -23,6 +28,7 @@ export default function Home() {
           <Text style={styles.buttonText}>+</Text>
         </TouchableOpacity>
       </View>
+      <Participant name="Filipe" onDelete={handleDelete} />
     </View>
   );
 }
